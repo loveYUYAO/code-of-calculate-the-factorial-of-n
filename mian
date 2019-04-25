@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-/*  代码功能：
-	1.calcute n！
-	2.count the occurrence number of 0 in the n!
+/* The function of code：
+	1.Calcute n！
+	2.Count the occurrence number of 0 in the n!
 ——————————————————————
     2019.04.25 19:30
 ——————————————————————
@@ -30,26 +30,26 @@
  
 int main()
 {
-	//because n！is too large，I used an array(bit[]) to store its each digit.For example,bit[0] is units digit,bit[1] is tens digit.
+	//Because n！is too large，I used an array(bit[]) to store its each digit.For example,bit[0] is units digit,bit[1] is tens digit.
 	/*When n! is too large,increase the length of bit.*/ 
 	//Make each digit be 0.
   
 	int bit[10000]={0};
 	
-	//input n,and use "Enter" to end inputing.
+	//Input n,and use "Enter" to end inputing.
   
 	int n;
 	printf("输入n:");
 	scanf("%d",&n);
 
 	/*
-    store the first digit:
-		1.the first storing is different,because each digit is 0.
-		2.record the value of n by m,then n--
+    	Store the first digit:
+	1.The first storing is different,because each digit is 0.
+	2.Record the value of n by m,then n--
 	*/ 
 	int m=n--;
   
-	//the role of i:record the highest digit of n!
+	//The role of i:record the highest digit of n!
   
 	int i=0;
   
@@ -60,11 +60,11 @@ int main()
 	}
 	
 	/*
-    store the remain digit：
-		1.record the value of n by m after each circulation.
-		2.stop circulation when n is 0.
-		3.multiply m by each digit in every circulation.
-		4.carry bit
+    	Store the remain digit：
+	1.Record the value of n by m after each circulation.
+	2.Stop circulation when n is 0.
+	3.Multiply m by each digit in every circulation.
+	4.Carry bit
 	*/
 	while(m=n--)
 	{
@@ -95,8 +95,8 @@ int main()
 	}
 	
 	/*
-    print:
-    from right to left,if the value of digit is not 0,start printing!
+    	Print:
+    	From right to left,if the value of digit is not 0,start printing!
 	*/ 
 	printf("\nn!是:\n");
 
